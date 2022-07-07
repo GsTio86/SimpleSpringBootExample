@@ -1,18 +1,24 @@
 package me.gstio86.web.obj;
 
-public class Data {
-    private int one;
-    private int two;
+import java.util.List;
 
-    public int getOne() {
-        return one;
+public class Data {
+    private List<Integer> nums;
+
+    public List<Integer> getNums() {
+        return nums;
     }
-    public int getTwo() {
-        return two;
+
+    public void setNums(List<Integer> nums) {
+        this.nums = nums;
     }
 
     public int getSum(){
-        return getOne() + getTwo();
+        int sum = 0;
+        for (int i : getNums()) {
+            sum+=i;
+        }
+        return sum;
     }
 
     public String getSum2Json() {
